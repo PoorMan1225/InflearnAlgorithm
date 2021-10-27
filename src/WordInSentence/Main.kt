@@ -5,5 +5,6 @@ fun main() {
     solution(str!!).run(::println)
 }
 
-fun solution(str: String): String = str.split(" ").maxByOrNull { it.length } ?: "Null"
+fun solution(str: String): String
+    = str.split(" ").maxByOrNull { it.length } ?: "Null"
 
