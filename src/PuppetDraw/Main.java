@@ -31,14 +31,11 @@ public class Main {
                 int value = arr[j][idx];
                 if(value != 0) {
                     arr[j][idx] = 0;
-                    if(stk.isEmpty()) {
-                        stk.push(value);
+                    if(!stk.isEmpty() && stk.peek() == value) {
+                        stk.pop();
+                        dcnt += 2;
                     }else
-                        if(stk.peek() == value) {
-                            stk.pop();
-                            dcnt += 2;
-                        }else
-                            stk.push(value);
+                        stk.push(value);
                     break;
                 }
             }
